@@ -3,19 +3,10 @@ public class Book {
     private String title;  // название книги
     private String author; // автор
     private Integer year; // год издания
-    private boolean isAvailable; // доступна ли книга для выдачи, изначально true).
-
-
-    // Конструктор по умолчанию
-    public Book() {
-        this.title = null;
-        this.author = null;
-        this.year = null;
-        this.isAvailable = true;
-    }
+    private Boolean isAvailable; // доступна ли книга для выдачи, изначально true).
 
     // Конструктор, принимающий все поля
-    public Book(String title, String author, Integer year, boolean isAvailable) {
+    public Book(String title, String author, Integer year, Boolean isAvailable) {
         this.title = title;
         this.author = author;
         this.year = year;
@@ -34,20 +25,26 @@ public class Book {
         return this.author;
     }
 
-    public boolean isAvailable() {
+    public Boolean isAvailable() {
         return this.isAvailable;
     }
 
     // Устанавливает isAvailable в false, если книга доступна.
     public void borrowBook() {
-        if(this.isAvailable) {
+        if(isAvailable) {
             this.isAvailable = false;
+        } else {
+            System.out.println("Книга " + this.title + " недоступна!");
         }
     }
 
     // Устанавливает isAvailable в true.
     public void returnBook() {
-        this.isAvailable = true;
+        if(!isAvailable) {
+            this.isAvailable = true;
+        } else {
+            System.out.println("Книга уже была возвращена ранее " + this.title);
+        }
     }
 
     // Выводит на экран информацию о книге

@@ -22,28 +22,28 @@ public class Book {
     }
 
     public String getAuthor() {
-        return this.author;
+        return author;
     }
 
     public Boolean isAvailable() {
-        return this.isAvailable;
+        return isAvailable;
     }
 
     // Устанавливает isAvailable в false, если книга доступна.
     public void borrowBook() {
         if(isAvailable) {
-            this.isAvailable = false;
+            isAvailable = false;
         } else {
-            System.out.println("Книга " + this.title + " недоступна!");
+            System.out.println("Книга " + title + " недоступна!");
         }
     }
 
     // Устанавливает isAvailable в true.
     public void returnBook() {
         if(!isAvailable) {
-            this.isAvailable = true;
+            isAvailable = true;
         } else {
-            System.out.println("Книга уже была возвращена ранее " + this.title);
+            System.out.println("Книга уже была возвращена ранее " + title);
         }
     }
 

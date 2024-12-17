@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
+    /*
+    // вариант со статической инициализацией
     private static List<Book> books;
 
     static {
@@ -11,6 +13,15 @@ public class Library {
     }
     public Library() {
 
+    } */
+
+    // без статической инициализации
+    private List<Book> books;
+
+    public Library() {
+        books = new ArrayList<>();
+        books.add(new Book("Первая книга", "Первый автор", 2024, true));
+        books.add(new Book("Вторая книга", "Второй автор", 2023, false));
     }
 
     // добавляет книгу в библиотеку.
